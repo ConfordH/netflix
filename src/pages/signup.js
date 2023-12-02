@@ -1,13 +1,10 @@
 import React, { useState, useContext } from 'react';
-import { useHistory } from 'react-router-dom';
 import { FirebaseContext } from '../context/firebase';
 import { Form } from '../components';
 import { HeaderContainer } from '../containers/header';
 import { FooterContainer } from '../containers/footer';
-import * as ROUTES from '../constants/routes';
 
 export default function SignUp() {
-  const history = useHistory();
   const { firebase } = useContext(FirebaseContext);
 
   const [firstName, setFirstName] = useState('');
@@ -30,7 +27,7 @@ export default function SignUp() {
             photoURL: Math.floor(Math.random() * 5) + 1,
           })
           .then(() => {
-            history.push(ROUTES.BROWSE);
+            // history.push(ROUTES.BROWSE);
           })
       )
       .catch((error) => {
@@ -66,7 +63,11 @@ export default function SignUp() {
               placeholder="Password"
               onChange={({ target }) => setPassword(target.value)}
             />
-            <Form.Submit disabled={isInvalid} type="submit" data-testid="sign-up">
+            <Form.Submit
+              disabled={isInvalid}
+              type="submit"
+              data-testid="sign-up"
+            >
               Sign Up
             </Form.Submit>
           </Form.Base>
@@ -75,7 +76,8 @@ export default function SignUp() {
             Already a user? <Form.Link to="/signin">Sign in now.</Form.Link>
           </Form.Text>
           <Form.TextSmall>
-            This page is protected by Google reCAPTCHA to ensure you're not a bot. Learn more.
+            This page is protected by Google reCAPTCHA to ensure you're not a
+            bot. Learn more.
           </Form.TextSmall>
         </Form>
       </HeaderContainer>

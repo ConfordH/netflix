@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link as ReachRouterLink } from 'react-router-dom';
+import { Link as ReactRouterLink } from 'react-router-dom';
 import {
   Container,
   Group,
@@ -39,18 +39,25 @@ Header.Group = function HeaderGroup({ children, ...restProps }) {
 
 Header.Logo = function HeaderLogo({ to, ...restProps }) {
   return (
-    <ReachRouterLink to={to}>
+    <ReactRouterLink to={to}>
       <Logo {...restProps} />
-    </ReachRouterLink>
+    </ReactRouterLink>
   );
 };
 
-Header.Search = function HeaderSearch({ searchTerm, setSearchTerm, ...restProps }) {
+Header.Search = function HeaderSearch({
+  searchTerm,
+  setSearchTerm,
+  ...restProps
+}) {
   const [searchActive, setSearchActive] = useState(false);
 
   return (
     <Search {...restProps}>
-      <SearchIcon onClick={() => setSearchActive((searchActive) => !searchActive)} data-testid="search-click">
+      <SearchIcon
+        onClick={() => setSearchActive((searchActive) => !searchActive)}
+        data-testid="search-click"
+      >
         <img src="/images/icons/search.png" alt="Search" />
       </SearchIcon>
       <SearchInput
@@ -88,7 +95,10 @@ Header.PlayButton = function HeaderPlayButton({ children, ...restProps }) {
   return <PlayButton {...restProps}>{children}</PlayButton>;
 };
 
-Header.FeatureCallOut = function HeaderFeatureCallOut({ children, ...restProps }) {
+Header.FeatureCallOut = function HeaderFeatureCallOut({
+  children,
+  ...restProps
+}) {
   return <FeatureCallOut {...restProps}>{children}</FeatureCallOut>;
 };
 
