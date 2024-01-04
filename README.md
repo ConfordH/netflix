@@ -16,12 +16,12 @@ To get started with the Netflix clone, follow these steps:
 
 1. Clone the repository to your local machine using the command:
    ```bash
-   git clone https://github.com/your-username/netflix-clone.git
+   git clone https://github.com/your-username/netflix.git
    ```
 
 2. Navigate to the project directory:
    ```bash
-   cd netflix-clone
+   cd netflix
    ```
 
 3. Set up a Firebase project and configure the Firebase credentials in the project.
