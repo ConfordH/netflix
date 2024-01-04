@@ -1,6 +1,6 @@
 # Netflix Clone
 
-![Netflix Clone](path/to/netflix-clone-logo.png)
+![Netflix Clone](netflix-preview.png)
 
 ## What the Project Does
 
